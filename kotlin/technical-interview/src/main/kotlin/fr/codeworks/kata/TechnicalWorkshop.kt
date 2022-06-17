@@ -57,7 +57,7 @@ class TechnicalWorkshop {
             print("----> What is your evaluation: t=true or f=false ?\n")
             val answer = readLine()
             if (answer != null) {
-                if (answer.equals("t") || answer.equals("T")) {
+                if (answer == "t" || answer == "T") {
                     when (currentQuestion.difficulty) {
                         1 -> s += 0.25
                         2 -> s += 0.5
