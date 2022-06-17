@@ -8,7 +8,7 @@ import kotlin.test.expect
 internal class TechnicalWorkshopTest {
 
     @Test
-    fun testshouldWork() {
+    fun shouldWork() {
         val expected = 42
         Assertions.assertThat(expected).isEqualTo(40+2)
     }

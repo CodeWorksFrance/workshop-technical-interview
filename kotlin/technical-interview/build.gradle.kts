@@ -34,13 +34,13 @@ dependencies {
     // Use the Kotlin test library.
     //testImplementation("org.jetbrains.kotlin:kotlin-test")
 
-    implementation ("com.google.code.gson:gson:2.8.6")
-    implementation ("org.junit.jupiter:junit-jupiter:5.7.0")
-    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.6.0")
+    implementation ("com.google.code.gson:gson:2.9.0")
+    implementation ("org.junit.jupiter:junit-jupiter:5.8.2")
+    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.2")
     testImplementation ("org.jetbrains.kotlin:kotlin-test-junit5")
-    testImplementation ("org.assertj:assertj-core:3.19.0")
-    testImplementation ("org.mockito:mockito-core:3.9.0")
-    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.6.0")
+    testImplementation ("org.assertj:assertj-core:3.23.1")
+    testImplementation ("org.mockito:mockito-core:4.6.1")
+    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.8.2")
 }
 
 application {
