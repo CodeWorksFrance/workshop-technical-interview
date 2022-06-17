@@ -10,8 +10,8 @@ data class CandidateResponse(val response : String, val question: Question)
 data class Candidate(var firstname: String, var lastname: String, var email: String) {}
 
 class TechnicalWorkshop {
-    internal var categories = mutableSetOf<String>()
-    internal var candidate: Candidate? = null
+    private var categories = mutableSetOf<String>()
+    private var candidate: Candidate? = null
 
     fun addCat(c: String) {
         println("Adding $c as categories")
