@@ -1,0 +1,7 @@
+Adding SQL as categories
+Adding Titi as candidate
+Welcome to the interview game. You'll have 8 questions on Java
+Are you ready? (y) to start?
+***************** Response from: Toto *****************
+
+The candidate as a total of 0.0 points.
