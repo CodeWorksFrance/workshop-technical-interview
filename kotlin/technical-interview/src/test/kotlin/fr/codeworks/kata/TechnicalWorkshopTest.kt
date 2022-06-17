@@ -13,7 +13,7 @@ import java.io.PrintStream
 internal class TechnicalWorkshopTest {
 
     lateinit var out: PrintStream
-    private val filePath = "src/test/resources/init"
+    val filePath = "src/test/resources/init"
 
     @BeforeEach
     fun setup(){
