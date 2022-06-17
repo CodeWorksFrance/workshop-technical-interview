@@ -1,0 +1,2 @@
+some input (first line)
+some more input (second line)

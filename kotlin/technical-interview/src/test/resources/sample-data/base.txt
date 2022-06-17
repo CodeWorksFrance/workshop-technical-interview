@@ -1,0 +1,6 @@
+# a sample test data for testing purposes
+< some input (first line)
+> some matching output (first line)
+# some more comment
+< some more input (second line)
+> some more matching output (second line)
