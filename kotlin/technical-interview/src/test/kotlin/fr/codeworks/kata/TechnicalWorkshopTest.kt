@@ -1,7 +1,9 @@
 package fr.codeworks.kata
 
+import jdk.internal.vm.vector.VectorSupport.test
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
