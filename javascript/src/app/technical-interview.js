@@ -1,7 +1,7 @@
 const promptSync = require( 'prompt-sync')
 const prompt = promptSync({})
 
-const Q = require( '../resources/categories.json')
+const Q = require( '../data/categories.json')
 
 let CAN = { firstName: '' }
 const CAT = []
