@@ -53,4 +53,42 @@ internal class TechnicalWorkshopTest {
             assertThat(expectedOutputData).isEqualTo("some matching output (first line)\nsome more matching output (second line)")
         }
     }
+
+    @Nested
+    inner class CharacterizationTesting{
+
+        @Test
+        fun `Should return a score of 0 when the candidate refuses to play`(){
+
+            val result = TechnicalWorkshop().runCodeTest("Java")
+
+            assertThat(result).isEqualTo(0.0)
+        }
+
+        @Test
+        fun `Should return a score of 2,5 when the candidates is half correct`(){
+            val workshop = TestableTechnicalWorkshop()
+
+            val fakeQ1 = Question("Q1", "R1", 2)
+            val fakeQ2 = Question("Q2", "R2", 3)
+            val fakeQ3 = Question("Q3", "R3", 3)
+
+            val fakeR1 = CandidateResponse("R1", fakeQ1)
+            val fakeR2 = CandidateResponse("R1", fakeQ2)
+            val fakeR3 = CandidateResponse("R1", fakeQ3)
+
+            val allResponses = mutableListOf(fakeR1, fakeR2, fakeR3)
+            workshop.collectCandidatesAnswersToQuestions(listOf(fakeQ1,fakeQ2, fakeQ3), allResponses)
+
+            val finalScore = workshop.runCodeTest("Java")
+            assertThat(finalScore).isEqualTo(2.5)
+        }
+
+        inner class TestableTechnicalWorkshop: TechnicalWorkshop(){
+
+            override fun readTheUserResponseForPlaying() = "y"
+            override fun readCandidateAnswersToQuestions() = "random"
+            override fun computeScore(responses: MutableList<CandidateResponse>): Double = 2.5
+        }
+    }
 }
