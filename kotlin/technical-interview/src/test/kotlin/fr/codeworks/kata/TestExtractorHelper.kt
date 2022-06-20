@@ -6,9 +6,9 @@ class TestExtractorHelper {
     fun extractContentOfFiles(testFileName: String) {
         val extension = testFileName.substringAfterLast('.',"")
         val fileNameWithoutExt = testFileName.substringBeforeLast(".")
-        val inputFileName = fileNameWithoutExt.plus("_input.").plus(extension)
         val expectedOutputFileName = fileNameWithoutExt.plus("_expected_output.").plus(extension)
         val extraction = extractTestDataParts(File(testFileName).bufferedReader().readLines())
+        val inputFileName = fileNameWithoutExt.plus("_input.").plus(extension)
         File(inputFileName).writeText(extraction.component1())
         File(expectedOutputFileName).writeText(extraction.component2())
     }
