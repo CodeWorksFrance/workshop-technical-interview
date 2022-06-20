@@ -1,0 +1,33 @@
+{
+  "name": "Technical interview workshop",
+  "version": "1.0.0",
+  "description": "JS version of our code test kata ",
+  "scripts": {
+    "start": "node --experimental-json-modules src/app/index.js",
+    "test": "jest --watch"
+  },
+  "keywords": [
+    "Legacy",
+    "Tests",
+    "Golden master",
+    "characterization tests"
+  ],
+  "contributors": [
+    {
+      "name": "Christophe Thibaut",
+      "email": "christophe.thibaut@codeworks.fr",
+      "url": "chistophethibaut.com"
+    },
+    {
+      "name": "Michelle AVOMO",
+      "email": "michelle.avomo@codeworks.fr"
+    }
+  ],
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
