@@ -1,9 +1,7 @@
 package fr.codeworks.kata
 
 import org.assertj.core.api.Assertions
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import kotlin.test.expect
 
 internal class TechnicalWorkshopTest {
 

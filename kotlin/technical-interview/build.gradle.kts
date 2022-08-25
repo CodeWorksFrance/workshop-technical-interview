@@ -13,41 +13,39 @@ plugins {
     // Apply the org.jetbrains.kotlin.jvm Plugin to add support for Kotlin.
     id("org.jetbrains.kotlin.jvm") version "1.5.31"
 
-    // Apply the application plugin to add support for building a CLI application in Java.
     application
 }
 
 repositories {
-    // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+
 dependencies {
-    // Align versions of all Kotlin components
-    // implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
-
-    // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-    implementation("com.google.guava:guava:30.1.1-jre")
-
-    // Use the Kotlin test library.
-    //testImplementation("org.jetbrains.kotlin:kotlin-test")
-
     implementation ("com.google.code.gson:gson:2.9.0")
-    implementation ("org.junit.jupiter:junit-jupiter:5.8.2")
-    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.2")
-    testImplementation ("org.jetbrains.kotlin:kotlin-test-junit5")
+    implementation ("org.junit.jupiter:junit-jupiter:5.9.0")
+    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.9.0")
+    testImplementation ("org.junit.jupiter:junit-jupiter-api:5.9.0")
     testImplementation ("org.assertj:assertj-core:3.23.1")
-    testImplementation ("org.mockito:mockito-core:4.6.1")
-    testRuntimeOnly ("org.junit.jupiter:junit-jupiter-engine:5.8.2")
+    testImplementation ("org.mockito:mockito-core:4.7.0")
 }
 
 application {
-    // Define the main class for the application.
     mainClass.set("fr.codeworks.kata.TechnicalWorkshopKt")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
