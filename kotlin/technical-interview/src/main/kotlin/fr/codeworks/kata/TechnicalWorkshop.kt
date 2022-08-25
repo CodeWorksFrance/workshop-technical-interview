@@ -95,9 +95,8 @@ fun main() {
 }
 
 fun runTheWholeGame(technicalWorkshop: TechnicalWorkshop) {
-    val codeTest = technicalWorkshop
-    codeTest.addCat("SQL")
-    codeTest.addCan("Toto", "Titi", "titi@mail.fr")
-    val score = codeTest.runCodeTest("Java")
+    technicalWorkshop.addCat("SQL")
+    technicalWorkshop.addCan("Toto", "Titi", "titi@mail.fr")
+    val score = technicalWorkshop.runCodeTest("Java")
     println("The candidate as a total of $score points.")
 }
