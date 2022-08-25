@@ -1,0 +1,7 @@
+Welcome to the interview game. You'll have 8 questions on Java
+Are you ready? (y) to start?
+Let's go!
+***************** Questions *****************
+Can a constructor be Private ?What is JIT ?What are the new Java 8 features ?How can a garbage collection be triggered ?What is an anonymous class ?What is a RuntimeException ?What is a HashMap ?Can one interface extend another interface ?Thank you for your participation!
+***************** Response from: null *****************
+
