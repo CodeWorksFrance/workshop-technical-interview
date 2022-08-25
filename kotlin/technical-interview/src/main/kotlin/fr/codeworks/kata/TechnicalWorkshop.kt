@@ -4,14 +4,14 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.File
 
-data class Question( val label: String, val answer: String,val difficulty: Int)
+data class Question(val label: String, val answer: String, val difficulty: Int)
 data class CategorizedQuestions(val label: String, val questions: List<Question>)
-data class CandidateResponse(val response : String, val question: Question)
+data class CandidateResponse(val response: String, val question: Question)
 data class Candidate(var firstname: String, var lastname: String, var email: String) {}
 
-class TechnicalWorkshop {
-    internal var categories = mutableSetOf<String>()
-    internal var candidate: Candidate? = null
+open class TechnicalWorkshop {
+    private var categories = mutableSetOf<String>()
+    private var candidate: Candidate? = null
 
     fun addCat(c: String) {
         println("Adding $c as categories")
@@ -36,7 +36,7 @@ class TechnicalWorkshop {
         var s = 0.0 // s is for score
         println("Welcome to the interview game. You'll have ${question?.size} questions on ${c}")
         print("Are you ready? (y) to start?\n")
-        val value = readLine() //response of the user
+        val value = readCandidateConsentOnPlaying() //response of the user
         if (value == "y") {
             println("Let's go!")
             print("***************** Questions *****************\n")
@@ -70,13 +70,21 @@ class TechnicalWorkshop {
         return s
     }
 
+    open fun readCandidateConsentOnPlaying() = readLine()
+
 }
 
 
 fun main() {
-    val codeTest = TechnicalWorkshop()
-    codeTest.addCat("SQL")
-    codeTest.addCan("Toto", "Titi", "titi@mail.fr")
-    val score = codeTest.runCodeTest("Java")
+    rollTheWholeGame(TechnicalWorkshop())
+
+}
+
+fun rollTheWholeGame(technicalWorkshop: TechnicalWorkshop) {
+    technicalWorkshop.addCat("SQL")
+    technicalWorkshop.addCan("Toto", "Titi", "titi@mail.fr")
+    val score = technicalWorkshop.runCodeTest("Java")
     println("The candidate as a total of $score points.")
 }
+
+
