@@ -39,22 +39,6 @@ internal class TechnicalWorkshopTest {
     }
 
     @Nested
-    inner class IndustrializedGoldenMaster {
-        private val rootFolder = "src/test/resources/sample-data"
-        @Test
-        @DisplayName("Should dynamically replace the parameters in the base file and compare the result with the expected file content ")
-        fun shouldExtractContentDataFromSamplesAndTheOuputShouldMatch() {
-            TestExtractorHelper().extractContentOfFiles("$rootFolder/base.txt")
-
-            val inputData = File("$rootFolder/base_input.txt").readText(Charsets.UTF_8)
-            assertThat(inputData).isEqualTo("some input (first line)\nsome more input (second line)")
-
-            val expectedOutputData = File("$rootFolder/base_expected_output.txt").readText(Charsets.UTF_8)
-            assertThat(expectedOutputData).isEqualTo("some matching output (first line)\nsome more matching output (second line)")
-        }
-    }
-
-    @Nested
     inner class CharacterizationTesting{
 
         @Test
@@ -91,4 +75,23 @@ internal class TechnicalWorkshopTest {
             override fun computeScore(responses: MutableList<CandidateResponse>): Double = 2.5
         }
     }
+
+
+    @Nested
+    inner class IndustrializedGoldenMaster {
+        private val rootFolder = "src/test/resources/sample-data"
+        @Test
+        @DisplayName("Should dynamically replace the parameters in the base file and compare the result with the expected file content ")
+        fun shouldExtractContentDataFromSamplesAndTheOuputShouldMatch() {
+            TestExtractorHelper().extractContentOfFiles("$rootFolder/base.txt")
+
+            val inputData = File("$rootFolder/base_input.txt").readText(Charsets.UTF_8)
+            assertThat(inputData).isEqualTo("some input (first line)\nsome more input (second line)")
+
+            val expectedOutputData = File("$rootFolder/base_expected_output.txt").readText(Charsets.UTF_8)
+            assertThat(expectedOutputData).isEqualTo("some matching output (first line)\nsome more matching output (second line)")
+        }
+    }
+
+
 }
